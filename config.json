@@ -1,0 +1,61 @@
+{
+  "locale": "zh-CN",
+  "theme": "default",
+  "locales": [
+    {
+      "name": "zh-CN",
+      "upload": "上传：",
+      "download": "下载：",
+      "cpu": "CPU：",
+      "memory": "内存："
+    },
+    {
+      "name": "emoji",
+      "upload": "📤：",
+      "download": "📥：",
+      "cpu": "🖥：",
+      "memory": "🧠："
+    },
+    {
+      "name": "en-US",
+      "upload": "Up: ",
+      "download": "Down: ",
+      "cpu": "CPU: ",
+      "memory": "MEM: "
+    }
+  ],
+  "themes": [
+    {
+      "name": "default",
+      "color": "#9ECBFF",
+      "background": "#24292E",
+      "border": "none",
+      "fontFamily": "Microsoft YaHei",
+      "opacity": 0.8
+    },
+    {
+      "name": "ocean",
+      "color": "white",
+      "background": "linear-gradient(45deg, rgb(111, 155, 198) 30%, rgb(243, 153, 58) 100%)",
+      "border": "none",
+      "fontFamily": "Microsoft YaHei",
+      "opacity": 0.8
+    },
+    {
+      "name": "peach",
+      "color": "#9ECBFF",
+      "background": "linear-gradient(45deg, rgb(224, 223, 198) 45%, rgb(237, 109, 70) 100%)",
+      "border": "none",
+      "fontFamily": "Microsoft YaHei",
+      "opacity": 0.8
+    },
+    {
+      "name": "lime",
+      "color": "#9ECBFF",
+      "background": "linear-gradient(45deg, rgb(237, 237, 237) 45%, rgb(140, 187, 131) 100%)",
+      "border": "none",
+      "fontFamily": "Microsoft YaHei",
+      "opacity": 0.8
+    }
+  ]
+}
