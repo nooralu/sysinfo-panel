@@ -1,14 +1,41 @@
 #![allow(non_snake_case)]
+use std::vec;
+
 use serde::{Deserialize, Serialize};
 
 impl Config {
-    pub fn load(path: &str) -> Config {
-        let config = std::fs::read_to_string(path).unwrap();
-        serde_json::from_str(&config).unwrap()
+    pub fn load(path: &str) -> std::io::Result<Config> {
+        let config = std::fs::read_to_string(path)?;
+        let config = serde_json::from_str(&config)?;
+        Ok(config)
     }
 
     pub fn json(&self) -> String {
         serde_json::to_string(&self).unwrap()
+    }
+}
+
+impl Default for Config {
+    fn default() -> Self {
+        Self {
+            locale: String::from("emoji"),
+            theme: String::from("default"),
+            locales: vec![Locale {
+                name: String::from("emoji"),
+                upload: String::from("⬆️"),
+                download: String::from("⬇️"),
+                cpu: String::from("💻"),
+                memory: String::from("💽"),
+            }],
+            themes: vec![Theme {
+                name: String::from("default"),
+                color: String::from("#000000"),
+                background: String::from("#ffffff"),
+                border: String::from("#000000"),
+                fontFamily: String::from("sans-serif"),
+                opacity: 0.8,
+            }],
+        }
     }
 }
 

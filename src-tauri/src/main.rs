@@ -17,8 +17,13 @@ fn get_config(state: tauri::State<'_, Arc<Config>>) -> Result<String, String> {
 }
 
 fn main() {
-    let config = Config::load("config.json");
-    let config = Arc::new(config);
+    let config = Arc::new(match Config::load("config.json") {
+        Ok(config) => config,
+        Err(e) => {
+            eprintln!("Error loading config: {}", e);
+            Config::default()
+        }
+    });
 
     tauri::Builder::default()
         .invoke_handler(tauri::generate_handler![get_config])
