@@ -63,11 +63,11 @@ fn net_speed_to_string(speed: u64) -> String {
     let mut speed = speed as f64;
     let mut unit = "KB/s";
     speed /= one_k;
-    if speed > one_k {
+    if speed > 100.0 {
         speed /= one_k;
         unit = "MB/s";
     }
-    if speed > one_k {
+    if speed > 100.0 {
         speed /= one_k;
         unit = "GB/s";
     }
