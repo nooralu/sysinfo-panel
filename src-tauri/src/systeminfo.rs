@@ -28,13 +28,16 @@ impl Info {
         let mut info: Info = Default::default();
 
         sys.refresh_all();
+
         let networks = sys.networks();
+        let mut upload = 0;
+        let mut download = 0;
         for (_, network) in networks {
-            info.upload
-                .push_str(&net_speed_to_string(network.transmitted()));
-            info.download
-                .push_str(&net_speed_to_string(network.received()));
+            upload += network.transmitted();
+            download += network.received();
         }
+        info.upload = net_speed_to_string(upload);
+        info.download = net_speed_to_string(download);
 
         let mut cpu_usage = 0.0;
         for cpu in sys.cpus() {
